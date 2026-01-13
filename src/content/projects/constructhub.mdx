@@ -1,0 +1,40 @@
+---
+title: ConstructHub
+tagline: Construction planning and cost estimation platform
+summary: A platform that streamlines planning, budgeting, and sourcing for Kenyan construction workflows.
+role: End-to-end development (design, backend, frontend, database)
+period: 2024–2026
+---
+
+## Overview
+ConstructHub is a web-based system designed to streamline construction planning in Kenya by integrating cost estimation, technician discovery, and project guidance.
+
+## Problem
+Builders often face:
+- Unreliable budgeting
+- Limited visibility into skilled technicians
+- Fragmented material pricing information
+- Weak planning workflows that cause cost overruns
+
+## Solution
+Key capabilities:
+- Cost estimation engine with structured phases
+- Project creation workflows and summaries
+- Technician directory (verification-ready)
+- Admin-managed knowledge/articles module (optional)
+
+## Architecture
+- Frontend: React/TypeScript
+- Backend: FastAPI
+- Data: SQLAlchemy + PostgreSQL/SQLite
+- Modules: estimation, auth, content, technicians, vendors
+
+## Challenges and Learnings
+- Designing estimation inputs to stay realistic and usable
+- Keeping modules decoupled while still consistent
+- Building for Kenyan context (materials, workflows, costs)
+
+## Next Improvements
+- Vendor verification + dynamic pricing feeds
+- More standardized estimation templates
+- Improved reporting exports (PDF/CSV)
