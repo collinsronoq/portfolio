@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "./Container";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 const GITHUB_URL = "https://github.com/collinsronoq";
 const LINKEDIN_URL = "https://www.linkedin.com/in/collins-rono-65306623a/";
@@ -38,6 +39,7 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             <a
               href={GITHUB_URL}
               target="_blank"
