@@ -1,6 +1,6 @@
 import { Container } from "./Container";
 
-const EMAIL = "mailto:your.email@example.com"; // placeholder
+const EMAIL = "ronocollins254@gmail.com"; 
 
 export function Footer() {
   return (

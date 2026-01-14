@@ -2,6 +2,10 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { compileMDX } from "next-mdx-remote/rsc";
+import { Callout } from "@/components/mdx/Callout";
+import { KeyPoints } from "@/components/mdx/KeyPoints";
+import { ProjectLinks } from "@/components/mdx/ProjectLinks";
+
 
 const PROJECTS_DIR = path.join(process.cwd(), "src", "content", "projects");
 
@@ -27,7 +31,11 @@ export async function getProjectMdxBySlug(slug: string) {
     source: content,
     options: { parseFrontmatter: false },
     // We'll add custom components later (callouts, code blocks, etc.)
-    components: {},
+    components: {
+      Callout,
+      KeyPoints,
+      ProjectLinks
+    },
   });
 
   return {

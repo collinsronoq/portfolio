@@ -19,7 +19,7 @@ export const projects: Project[] = [
     stack: ["FastAPI", "SQLAlchemy", "React", "TypeScript", "PostgreSQL"],
     featured: true,
     githubUrl: "https://github.com/PLACEHOLDER/constructhub",
-    liveUrl: "https://PLACEHOLDER.com",
+    liveUrl: "https://learn-react-movie-page-xpa3.vercel.app/",
   },
   {
     slug: "shirika",
@@ -30,7 +30,7 @@ export const projects: Project[] = [
     stack: ["FastAPI", "SQLAlchemy", "Tailwind", "PostgreSQL"],
     featured: true,
     githubUrl: "https://github.com/PLACEHOLDER/shirika",
-    liveUrl: "https://PLACEHOLDER.com",
+    liveUrl: "https://learn-react-movie-page-xpa3.vercel.app/",
   },
   {
     slug: "music-genre-classifier",
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     stack: ["Python", "TensorFlow", "Librosa", "Streamlit"],
     featured: true,
     githubUrl: "https://github.com/PLACEHOLDER/music-genre-classifier",
-    liveUrl: "https://PLACEHOLDER.com",
+    liveUrl: "https://learn-react-movie-page-xpa3.vercel.app/",
   },
 ];
 

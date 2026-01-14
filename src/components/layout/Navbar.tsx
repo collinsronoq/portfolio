@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Container } from "./Container";
 
-const GITHUB_URL = "https://github.com/PLACEHOLDER";
-const LINKEDIN_URL = "https://www.linkedin.com/in/PLACEHOLDER";
+const GITHUB_URL = "https://github.com/collinsronoq";
+const LINKEDIN_URL = "https://www.linkedin.com/in/collins-rono-65306623a/";
 
 export function Navbar() {
   return (

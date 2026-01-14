@@ -3,8 +3,8 @@ import { Container } from "@/components/layout/Container";
 import Image from "next/image";
 
 
-const EMAIL = "your.email@example.com"; // placeholder
-const CV_URL = "/cv/Collins-Rono-CV.pdf"; // placeholder file path
+const EMAIL = "ronocollins254@gmail.com"; 
+const CV_URL = "/cv/Collins-Rono-CV.pdf"; 
 
 export function Hero() {
   return (
@@ -54,7 +54,7 @@ export function Hero() {
             <div className="flex flex-col items-center rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
               <div className="relative h-36 w-36 overflow-hidden rounded-full border border-gray-200 dark:border-gray-700">
                 <Image
-                  src="/images/profile-placeholder.jpg"
+                  src="/images/IMG_20230302_173912.jpg"
                   alt="Collins Rono"
                   fill
                   className="object-cover"

@@ -9,12 +9,17 @@ type Params = {
   slug: string;
 };
 
+type PageProps = {
+  params: Promise<Params>;
+};
+
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: { params: Params }) {
-  const project = projects.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }: PageProps) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     return {
@@ -28,11 +33,12 @@ export function generateMetadata({ params }: { params: Params }) {
   };
 }
 
-export default async function ProjectCaseStudyPage({ params }: { params: Params }) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectCaseStudyPage({ params }: PageProps) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
 
-  const mdx = await getProjectMdxBySlug(params.slug);
+  const mdx = await getProjectMdxBySlug(slug);
 
   return (
     <section className="py-14 md:py-20">
@@ -85,13 +91,14 @@ export default async function ProjectCaseStudyPage({ params }: { params: Params 
 								<article className="prose prose-gray max-w-none dark:prose-invert">
 									{mdx.content}
 								</article>
+                
 							) : (
 								<div>
 									<h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
 										Case study not added yet
 									</h2>
 									<p className="mt-3 text-base leading-relaxed text-gray-600 dark:text-gray-400">
-										Create <code className="font-mono">src/content/projects/{params.slug}.mdx</code>{" "}
+										Create <code className="font-mono">src/content/projects/{slug}.mdx</code>{" "}
 										to add the case study content.
 									</p>
 								</div>
