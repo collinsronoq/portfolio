@@ -18,7 +18,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
         <Link
           href={`/projects/${project.slug}`}
-          className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
+          className="rounded-xl bg-indigo-600 px-4 py-2 text-xs md:text-sm font-medium text-white hover:bg-indigo-700 no-wrap"
         >
           Case Study
         </Link>
@@ -34,7 +34,7 @@ export function ProjectCard({ project }: { project: Project }) {
         ))}
       </div>
 
-      <div className="mt-6 flex flex-wrap items-center gap-3">
+      <div className="mt-6 flex flex-wrap items-center justify-around gap-3">
         <a
           href={project.githubUrl}
           target="_blank"

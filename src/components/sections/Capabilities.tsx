@@ -29,10 +29,10 @@ export function Capabilities() {
     <section className="py-14 md:py-20">
       <Container>
         <div className="max-w-2xl">
-          <h2 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl">
+          <h2 className="text-2xl font-semibold font-mono tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl">
             What I do
           </h2>
-          <p className="mt-3 text-base leading-relaxed text-gray-600 dark:text-gray-400">
+          <p className="mt-3 text-base font-mono leading-relaxed text-gray-600 dark:text-gray-400">
             I build systems that are practical, maintainable, and aligned to
             real workflows focusing on clarity, reliability, and clean delivery.
           </p>
@@ -41,10 +41,10 @@ export function Capabilities() {
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {capabilities.map((c) => (
             <Card key={c.title}>
-              <h3 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-gray-100">
+              <h3 className="text-lg font-semibold font-mono tracking-tight text-gray-900 dark:text-gray-100">
                 {c.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+              <p className="mt-2 text-sm leading-relaxed font-mono text-gray-600 dark:text-gray-400">
                 {c.description}
               </p>
             </Card>

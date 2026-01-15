@@ -29,7 +29,7 @@ const skillGroups: Array<{
 
 function SkillPill({ label }: { label: string }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-700 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-200">
+    <span className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium font-mono text-gray-700 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-200">
       {label}
     </span>
   );
@@ -40,10 +40,10 @@ export function Skills() {
     <section className="py-14 md:py-20">
       <Container>
         <div className="max-w-2xl">
-          <h2 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl">
+          <h2 className="text-2xl font-semibold font-mono tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl">
             Skills
           </h2>
-          <p className="mt-3 text-base leading-relaxed text-gray-600 dark:text-gray-400">
+          <p className="mt-3 text-base leading-relaxed font-mono text-gray-600 dark:text-gray-400">
             A practical toolkit built through hands-on projects and iterative delivery.
           </p>
         </div>
@@ -51,7 +51,7 @@ export function Skills() {
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {skillGroups.map((group) => (
             <Card key={group.title}>
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-900 dark:text-gray-100">
+              <h3 className="text-sm font-semibold font-mono uppercase tracking-wide text-gray-900 dark:text-gray-100">
                 {group.title}
               </h3>
 

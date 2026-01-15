@@ -12,10 +12,10 @@ export function Footer() {
           </p>
 
           <a
-            href={EMAIL}
+            href="./sections/Contact"
             className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
           >
-            Email me
+            ronocollins254@gmail.com
           </a>
         </div>
       </Container>

@@ -52,10 +52,10 @@ export function Contact() {
       <Container>
         <div className="grid gap-6 md:grid-cols-12 md:items-start">
           <div className="md:col-span-5">
-            <h2 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl">
+            <h2 className="text-2xl font-semibold font-mono tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl">
               Contact
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-gray-600 dark:text-gray-400">
+            <p className="mt-3 text-base leading-relaxed font-mono text-gray-600 dark:text-gray-400">
               If you want to collaborate, hire me, or discuss a project idea,
               send a message here. Email is the fastest channel.
             </p>
@@ -63,7 +63,7 @@ export function Contact() {
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href={`mailto:${EMAIL}`}
-                className="rounded-xl bg-indigo-600 px-5 py-3 text-sm font-medium text-white hover:bg-indigo-700"
+                className="rounded-xl bg-indigo-600 px-5 py-3 text-sm font-medium font-mono text-white hover:bg-indigo-700"
               >
                 Email me
               </a>
@@ -72,7 +72,7 @@ export function Contact() {
                 href={GITHUB_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-xl border border-gray-200 bg-white px-5 py-3 text-sm font-medium text-gray-800 hover:border-gray-300 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-200 dark:hover:border-gray-700"
+                className="rounded-xl border border-gray-200 bg-white px-5 py-3 text-sm font-medium font-mono text-gray-800 hover:border-gray-300 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-200 dark:hover:border-gray-700"
               >
                 GitHub
               </a>
@@ -81,7 +81,7 @@ export function Contact() {
                 href={LINKEDIN_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-xl border border-gray-200 bg-white px-5 py-3 text-sm font-medium text-gray-800 hover:border-gray-300 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-200 dark:hover:border-gray-700"
+                className="rounded-xl border border-gray-200 bg-white px-5 py-3 text-sm font-medium font-mono text-gray-800 hover:border-gray-300 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-200 dark:hover:border-gray-700"
               >
                 LinkedIn
               </a>
@@ -90,14 +90,14 @@ export function Contact() {
 
           <div className="md:col-span-7">
             <Card>
-              <h3 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-gray-100">
+              <h3 className="text-lg font-semibold tracking-tight font-mono text-gray-900 dark:text-gray-100">
                 Send a message
               </h3>
 
               <form onSubmit={onSubmit} className="mt-5 space-y-4">
                 <div className="grid gap-4 md:grid-cols-2">
                   <div>
-                    <label className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                    <label className="text-sm font-medium text-gray-900 font-mono dark:text-gray-100">
                       Name
                     </label>
                     <input
@@ -107,13 +107,13 @@ export function Contact() {
                       }
                       required
                       minLength={2}
-                      className="mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:focus:border-indigo-500 dark:focus:ring-indigo-950"
+                      className="mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-mono text-gray-900 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:focus:border-indigo-500 dark:focus:ring-indigo-950"
                       placeholder="Your name"
                     />
                   </div>
 
                   <div>
-                    <label className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                    <label className="text-sm font-medium font-mono text-gray-900 dark:text-gray-100">
                       Email
                     </label>
                     <input
@@ -123,14 +123,14 @@ export function Contact() {
                       }
                       required
                       type="email"
-                      className="mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:focus:border-indigo-500 dark:focus:ring-indigo-950"
+                      className="mt-2 w-full rounded-xl font-mono border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:focus:border-indigo-500 dark:focus:ring-indigo-950"
                       placeholder="you@example.com"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                  <label className="text-sm font-medium font-mono text-gray-900 dark:text-gray-100">
                     Message
                   </label>
                   <textarea
@@ -141,19 +141,19 @@ export function Contact() {
                     required
                     minLength={10}
                     rows={6}
-                    className="mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:focus:border-indigo-500 dark:focus:ring-indigo-950"
+                    className="mt-2 w-full rounded-xl font-mono border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:focus:border-indigo-500 dark:focus:ring-indigo-950"
                     placeholder="Tell me what you want to build or discuss..."
                   />
                 </div>
 
                 {status === "error" ? (
-                  <p className="text-sm font-medium text-red-600 dark:text-red-400">
+                  <p className="text-sm font-medium font-mono text-red-600 dark:text-red-400">
                     {error}
                   </p>
                 ) : null}
 
                 {status === "success" ? (
-                  <p className="text-sm font-medium text-emerald-700 dark:text-emerald-400">
+                  <p className="text-sm font-medium font-mono text-emerald-700 dark:text-emerald-400">
                     Message sent successfully. I will get back to you.
                   </p>
                 ) : null}
@@ -161,15 +161,15 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-3 text-sm font-medium text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-70"
+                  className="inline-flex items-center font-mono justify-center rounded-xl bg-indigo-600 px-5 py-3 text-sm font-medium text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-70"
                 >
                   {status === "submitting" ? "Sending..." : "Send message"}
                 </button>
 
-                <p className="text-xs text-gray-500 dark:text-gray-500">
+                {/* <p className="text-xs text-gray-500 dark:text-gray-500">
                   This form currently logs submissions on the server for MVP
                   testing. We will connect it to an email provider next.
-                </p>
+                </p> */}
               </form>
             </Card>
           </div>
