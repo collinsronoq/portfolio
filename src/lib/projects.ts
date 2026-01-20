@@ -27,7 +27,7 @@ export const projects: Project[] = [
     tagline: "Contributions and expenditure tracking system",
     description:
       "A system for tracking estate contributions, balances, and expenditures with structured records and reporting workflows.",
-    stack: ["FastAPI", "SQLAlchemy", "Tailwind", "PostgreSQL"],
+    stack: ["FastAPI", "SQLAlchemy", "Tailwind", "PostgreSQL", "Daraja API"],
     featured: true,
     githubUrl: "https://github.com/PLACEHOLDER/shirika",
     liveUrl: "https://learn-react-movie-page-xpa3.vercel.app/",
