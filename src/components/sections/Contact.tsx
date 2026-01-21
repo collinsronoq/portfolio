@@ -1,22 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Container } from "@/components/layout/Container";
 import { Card } from "@/components/ui/Card";
 
-const EMAIL = "ronocollins254@gmail.com"; // placeholder
-const GITHUB_URL = "https://github.com/collinsronoq";
-const LINKEDIN_URL = "https://www.linkedin.com/in/collins-rono-65306623a/";
+const EMAIL =
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL || "ronocollins254@gmail.com";
+const GITHUB_URL =
+  process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/collinsronoq";
+const LINKEDIN_URL =
+  process.env.NEXT_PUBLIC_LINKEDIN_URL ||
+  "https://www.linkedin.com/in/collins-rono-65306623a/";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 export function Contact() {
+  const formLoadedAt = useRef(Date.now());
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string>("");
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
+    company: "",
   });
 
   async function onSubmit(e: React.FormEvent) {
@@ -28,7 +34,10 @@ export function Contact() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          formLoadedAt: formLoadedAt.current,
+        }),
       });
 
       const data = (await res.json()) as { ok: boolean; error?: string };
@@ -40,7 +49,7 @@ export function Contact() {
       }
 
       setStatus("success");
-      setForm({ name: "", email: "", message: "" });
+      setForm({ name: "", email: "", message: "", company: "" });
     } catch {
       setStatus("error");
       setError("Network error. Please try again.");
@@ -95,6 +104,23 @@ export function Contact() {
               </h3>
 
               <form onSubmit={onSubmit} className="mt-5 space-y-4">
+                <div aria-hidden="true" className="sr-only">
+                  <label className="text-sm font-medium text-gray-900 font-mono dark:text-gray-100">
+                    Company
+                  </label>
+                  <input
+                    name="company"
+                    value={form.company}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, company: e.target.value }))
+                    }
+                    tabIndex={-1}
+                    autoComplete="off"
+                    className="mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-mono text-gray-900 outline-none dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100"
+                    placeholder="Company"
+                  />
+                </div>
+
                 <div className="grid gap-4 md:grid-cols-2">
                   <div>
                     <label className="text-sm font-medium text-gray-900 font-mono dark:text-gray-100">
@@ -105,11 +131,12 @@ export function Contact() {
                       onChange={(e) =>
                         setForm((f) => ({ ...f, name: e.target.value }))
                       }
-                      required
-                      minLength={2}
-                      className="mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-mono text-gray-900 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:focus:border-indigo-500 dark:focus:ring-indigo-950"
-                      placeholder="Your name"
-                    />
+                    required
+                    minLength={2}
+                    maxLength={120}
+                    className="mt-2 w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-mono text-gray-900 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:focus:border-indigo-500 dark:focus:ring-indigo-950"
+                    placeholder="Your name"
+                  />
                   </div>
 
                   <div>
@@ -123,6 +150,7 @@ export function Contact() {
                       }
                       required
                       type="email"
+                      maxLength={200}
                       className="mt-2 w-full rounded-xl font-mono border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:focus:border-indigo-500 dark:focus:ring-indigo-950"
                       placeholder="you@example.com"
                     />
@@ -140,6 +168,7 @@ export function Contact() {
                     }
                     required
                     minLength={10}
+                    maxLength={3000}
                     rows={6}
                     className="mt-2 w-full rounded-xl font-mono border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100 dark:focus:border-indigo-500 dark:focus:ring-indigo-950"
                     placeholder="Tell me what you want to build or discuss..."

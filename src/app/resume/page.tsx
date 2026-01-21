@@ -1,6 +1,9 @@
 import { Container } from "@/components/layout/Container";
 
-const CV_URL = "/cv/Collins-Rono-CV.pdf";
+const CV_URL =
+  process.env.NEXT_PUBLIC_CV_URL ||
+  process.env.CV_URL ||
+  "/cv/Collins-rono-cv.pdf";
 
 export default function ResumePage() {
   return (

@@ -1,6 +1,8 @@
 import { Container } from "./Container";
 
-const EMAIL = "ronocollins254@gmail.com"; 
+
+const EMAIL =
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL || "ronocollins254@gmail.com";
 
 export function Footer() {
   return (
@@ -15,7 +17,7 @@ export function Footer() {
             href="./sections/Contact"
             className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
           >
-            ronocollins254@gmail.com
+            {EMAIL}
           </a>
         </div>
       </Container>

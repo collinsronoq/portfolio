@@ -18,6 +18,10 @@ const skillGroups: Array<{
     items: ["PostgreSQL", "SQLite", "MongoDB (PyMongo)", "Schema design"],
   },
   {
+    title: "Integrations",
+    items: ["Daraja API"]
+  },
+  {
     title: "Dev & Tooling",
     items: ["Git/GitHub", "Logging & debugging", "Deployment basics", "Docker"],
   },

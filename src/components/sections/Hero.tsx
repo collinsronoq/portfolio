@@ -3,8 +3,9 @@ import { Container } from "@/components/layout/Container";
 import Image from "next/image";
 
 
-const EMAIL = "ronocollins254@gmail.com"; 
-const CV_URL = "/cv/Collins-Rono-CV.pdf"; 
+const EMAIL =
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL || "ronocollins254@gmail.com";
+const CV_URL = process.env.NEXT_PUBLIC_CV_URL || "/cv/Collins-rono-cv.pdf";
 
 export function Hero() {
   return (

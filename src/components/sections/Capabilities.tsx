@@ -10,12 +10,12 @@ const capabilities = [
   {
     title: "Backend APIs & databases",
     description:
-      "FastAPI-based services with SQLAlchemy models, validation, auth patterns, and database-first thinking for reporting and consistency Simpler backend implemented with Flask framework",    
+      "FastAPI-based services with SQLAlchemy models, validation, auth patterns, and database-first thinking for reporting and consistency also Simpler applications implemented with Flask framework",    
   },
   {
     title: "Integrations & automation",
     description:
-      "Third-party API integration work including payment flows and callback handling, with logging and operational reliability in mind.",
+      "Third-party API integration work including payment flows and callback handling e.g daraja api, with logging and operational reliability in mind.",
   },
   {
     title: "AI/ML features & experimentation",
