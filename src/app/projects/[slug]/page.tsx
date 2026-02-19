@@ -129,7 +129,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
                   Role
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-                  (Placeholder) End-to-end development: planning, backend, frontend,
+                  End-to-end development: planning, backend, frontend,
                   database, integration, deployment.
                 </p>
               </div>

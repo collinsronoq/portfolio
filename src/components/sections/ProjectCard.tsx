@@ -3,6 +3,7 @@ import { Project } from "@/lib/projects";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 
+
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <Card>
@@ -18,7 +19,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
         <Link
           href={`/projects/${project.slug}`}
-          className="rounded-xl bg-indigo-600 px-4 py-2 text-xs md:text-sm font-medium text-white hover:bg-indigo-700 no-wrap"
+          className="rounded-lg bg-indigo-600 px-2 py-1 text-xs md:text-sm text-nowrap font-medium text-white hover:bg-indigo-700 no-wrap"
         >
           Case Study
         </Link>
