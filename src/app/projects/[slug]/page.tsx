@@ -41,14 +41,14 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
   const mdx = await getProjectMdxBySlug(slug);
 
   return (
-    <section className="py-14 md:py-20">
+    <section className="pb-14 md:pb-20 pt-8 md:pt-12">
       <Container>
-        <div className="mb-8">
+        <div className="mb-4">
           <Link
             href="/projects"
-            className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
+            className="text-xs md:text-sm font-medium border rounded-xl bg-white border-gray-200 px-3 py-2 text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 hover:border-gray-300 dark:border-gray-800 dark:bg-gray-900 dark:hover:border-gray-700"
           >
-            ← Back to Projects
+            ← Back
           </Link>
         </div>
 
@@ -83,7 +83,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
           </div>
         </header>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-12">
+        <div className="mt-12 grid gap-8 md:grid-cols-12 relative">
           {/* Main content */}
           <div className="md:col-span-8">
 						<div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
@@ -108,7 +108,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
 
 
           {/* Sidebar */}
-          <aside className="md:col-span-4">
+          <aside className="md:col-span-4 sticky top-20 h-fit">
             <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
               <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-900 dark:text-gray-100">
                 Tech Stack

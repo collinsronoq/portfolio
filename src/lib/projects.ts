@@ -9,6 +9,18 @@ export type Project = {
   liveUrl?: string;    // placeholder
 };
 
+const GITHUB_URL =
+  process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/collinsronoq";
+
+const CONSTRUCTHUB_LIVE_URL =
+  process.env.NEXT_PUBLIC_CONSTRUCTHUB_LIVE_URL || "https://github.com/collinsronoq";
+
+const COURT_MANAGEMENT_SYSTEM_LIVE_URL =
+  process.env.NEXT_PUBLIC_COURT_MANAGEMENT_SYSTEM_LIVE_URL || "https://github.com/collinsronoq";
+
+const MUSIC_GENRE_CLASSIFICATION_LIVE_URL =
+  process.env.NEXT_PUBLIC_MUSIC_GENRE_CLASSIFICATION_LIVE_URL || "https://github.com/collinsronoq";
+
 export const projects: Project[] = [
   {
     slug: "constructhub",
@@ -18,8 +30,8 @@ export const projects: Project[] = [
       "A web-based platform designed to streamline construction planning in Kenya through cost estimation, technician discovery, and material sourcing support.",
     stack: ["FastAPI", "SQLAlchemy", "React", "TypeScript", "PostgreSQL"],
     featured: true,
-    githubUrl: "https://github.com/PLACEHOLDER/constructhub",
-    liveUrl: "https://learn-react-movie-page-xpa3.vercel.app/",
+    githubUrl: GITHUB_URL,
+    liveUrl: CONSTRUCTHUB_LIVE_URL,
   },
   {
     slug: "shirika",
@@ -29,8 +41,8 @@ export const projects: Project[] = [
       "A system for tracking estate contributions, balances, and expenditures with structured records and reporting workflows.",
     stack: ["TypeScript", "FastAPI", "SQLAlchemy", "Tailwind", "PostgreSQL", "Daraja API"],
     featured: true,
-    githubUrl: "https://github.com/PLACEHOLDER/shirika",
-    liveUrl: "https://learn-react-movie-page-xpa3.vercel.app/",
+    githubUrl: GITHUB_URL,
+    liveUrl: COURT_MANAGEMENT_SYSTEM_LIVE_URL,
   },
   {
     slug: "music-genre-classifier",
@@ -40,8 +52,8 @@ export const projects: Project[] = [
       "A machine learning project that classifies music genres using spectrograms and a CNN pipeline, with experimentation around augmentation and model depth.",
     stack: ["Python", "TensorFlow", "Librosa", "Streamlit"],
     featured: true,
-    githubUrl: "https://github.com/PLACEHOLDER/music-genre-classifier",
-    liveUrl: "https://learn-react-movie-page-xpa3.vercel.app/",
+    githubUrl: GITHUB_URL,
+    liveUrl: MUSIC_GENRE_CLASSIFICATION_LIVE_URL,
   },
 ];
 

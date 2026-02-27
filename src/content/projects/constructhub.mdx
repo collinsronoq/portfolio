@@ -1,53 +1,291 @@
 ---
 title: ConstructHub
-tagline: Construction planning and cost estimation platform
-summary: A platform that streamlines planning, budgeting, and sourcing for Kenyan construction workflows.
-role: End-to-end development (design, backend, frontend, database)
-period: 2024–2026
+tagline: AI-powered construction planning and cost intelligence platform
+summary: A localized construction intelligence platform that integrates cost estimation, material sourcing, technician verification, and AI-driven guidance for Kenyan builders.
+role: End-to-end development (system design, backend architecture, frontend engineering, database modeling)
+period: 2025–2026
 ---
 
 ## Overview
-ConstructHub is a web-based system designed to streamline construction planning in Kenya by integrating cost estimation, technician discovery, and project guidance.
 
-<Callout title="Context" variant="info">
-  This project focuses on Kenyan construction workflows where budgeting accuracy and verified service providers are major pain points.
+ConstructHub is a full-stack construction planning platform built to address structural inefficiencies in Kenya’s small- and mid-scale construction sector.
+
+The platform integrates:
+
+- A **location-aware cost estimation engine**
+- A **verified technician directory**
+- A **verified vendor directory**
+- A **material marketplace with vendor-managed pricing**
+- An **AI-powered construction assistant**
+- A unified project dashboard
+
+Rather than acting as a generic cost calculator or a basic marketplace, ConstructHub functions as a **construction intelligence system** tailored to Kenya’s pricing volatility, informal procurement workflows, and limited transparency in service provision.
+
+<Callout title="Core Thesis" variant="info">
+Kenyan construction inefficiencies are not caused by lack of effort, they are caused by fragmented information systems. ConstructHub consolidates cost data, sourcing, and guidance into a single structured workflow.
 </Callout>
 
-## Problem
-Builders often face:
-- Unreliable budgeting
-- Limited visibility into skilled technicians
-- Fragmented material pricing information
-- Weak planning workflows that cause cost overruns
+---
 
-## Solution
-Key capabilities:
-- Cost estimation engine with structured phases
-- Project creation workflows and summaries
-- Technician directory (verification-ready)
-- Admin-managed knowledge/articles module (optional)
+## The Problem
 
-<KeyPoints points={[
-  "Cost estimation engine organized by construction phases",
-  "Structured backend modules with clean separation of concerns",
-  "Designed for local context (materials, workflows, realistic outputs)"
-]} />
+Construction in Kenya, particularly for first-time builders and small developers, is characterized by systemic friction.
 
-## Architecture
-- Frontend: React/TypeScript
-- Backend: FastAPI
-- Data: SQLAlchemy + PostgreSQL/SQLite
-- Modules: estimation, auth, content, technicians, vendors
+### 1. Budgeting Without Reliable Data
 
-## Challenges and Learnings
-- Designing estimation inputs to stay realistic and usable
-- Keeping modules decoupled while still consistent
-- Building for Kenyan context (materials, workflows, costs)
+Most builders rely on:
+- Contractor verbal estimates
+- Generic “cost per square meter” formulas
+- Outdated Excel sheets
+- Word-of-mouth pricing
 
-## Next Improvements
-- Vendor verification + dynamic pricing feeds
-- More standardized estimation templates
-- Improved reporting exports (PDF/CSV)
-- Track construction progress, financially; amount used so far, materially; material used and how much remaining and needed, construction progress 
+This leads to:
+
+- Underestimated project costs  
+- Budget overruns mid-construction  
+- Abandoned or stalled projects  
+- High exposure to price manipulation  
+
+Material prices fluctuate frequently by region (e.g., Syokimau vs. Nakuru), yet most estimation tools assume static pricing.
+
+There is no standardized, accessible, region-aware estimation engine for small-scale builders.
+
+---
+
+### 2. Fragmented Material Sourcing
+
+Material procurement is largely manual:
+
+- Visiting multiple hardware stores physically  
+- Calling vendors individually  
+- No structured price comparison  
+- No centralized listing of suppliers  
+
+Challenges include:
+
+- Price opacity  
+- Inconsistent quality  
+- Lack of stock visibility  
+- Limited trust in online sellers  
+
+General marketplaces are not construction-specific and lack integration with budgeting tools.
+
+Builders calculate budgets in one place and source materials in another, creating workflow fragmentation.
+
+---
+
+### 3. Technician Discovery and Verification Gaps
+
+Builders struggle to:
+
+- Verify technician credentials (EBK, NCA, EPRA numbers)
+- Assess reliability beyond word-of-mouth
+- Compare professionals by specialization and region
+
+Global platforms designed for mature, standardized markets do not support localized Kenyan workflows.
+
+The result:
+- Hiring based on proximity rather than qualification  
+- Increased risk of substandard work  
+- No centralized professional directory for small-scale builds  
+
+---
+
+### 4. Knowledge Gap for First-Time Builders
+
+New homeowners frequently lack clarity on:
+
+- Quantity calculations (cement, sand, ballast)
+- Permit requirements by county
+- Cost breakdown logic (materials vs. labor vs. transport)
+- Order of construction phases
+
+Without professional guidance, decision-making is reactive rather than structured.
+
+This knowledge gap increases dependency on contractors, limiting cost transparency.
+
+---
+
+## The Solution
+
+ConstructHub addresses these issues through an **integrated, role-aware architecture**.
+
+Instead of offering isolated tools, it connects estimation, sourcing, and advisory workflows into a single system.
+
+---
+
+### 1. Location-Aware Cost Estimation Engine
+
+- Combines user project inputs (house size, type, materials)
+- Integrates vendor-managed pricing
+- Breaks costs into:
+  - Materials
+  - Labor
+  - Transport
+- Produces structured summaries
+- Designed around Kenyan construction phases
+
+Unlike static calculators, pricing reflects **real vendor entries**, not abstract averages.
+
+---
+
+### 2. Material Marketplace with Structured Vendor Profiles
+
+Vendors:
+
+- Upload material listings
+- Update pricing
+- Manage stock visibility
+- Display contact information
+
+Builders:
+
+- Compare prices by region
+- Filter by material type
+- Align sourcing directly with their budget outputs
+
+This eliminates workflow disconnection between planning and procurement.
+
+---
+
+### 3. Technician Directory and Verification System
+
+Technicians:
+
+- Submit credentials for review
+- Maintain professional profiles
+- Indicate specialization and availability
+
+Builders:
+
+- Filter by region and expertise
+- View verified credentials
+- Access structured professional listings
+
+The system emphasizes credibility and traceability.
+
+---
+
+### 4. AI Construction Assistant
+
+The AI module provides:
+
+- Context-aware budgeting explanations  
+- Material quantity guidance  
+- Regulatory clarification prompts  
+- Role-sensitive responses (builder vs technician)  
+
+It bridges the advisory gap without replacing licensed professionals.
+
+The assistant is designed as a decision-support system, not a legal authority.
+
+---
+
+## Architectural Approach
+
+ConstructHub follows a modular, layered design.
+
+**Frontend**
+- React + TypeScript
+- Role-based dashboards
+- Structured UI workflows
+
+**Backend**
+- FastAPI
+- JWT authentication
+- Domain-based module separation
+
+**Database**
+- SQLAlchemy ORM
+- PostgreSQL (production) / SQLite (development)
+- Role-linked relational modeling
+
+**Core Modules**
+- Authentication
+- Estimation
+- Marketplace
+- Technicians
+- Content / Knowledge
+- AI Assistant
+
+The system prioritizes:
+- Separation of concerns  
+- Data normalization  
+- Extensibility for future integrations  
+
+---
+
+## Systemic Impact
+
+ConstructHub improves:
+
+### Budget Accuracy
+By replacing abstract averages with localized vendor data.
+
+### Procurement Efficiency
+By integrating sourcing into the same system as budgeting.
+
+### Transparency
+Through price comparison and structured cost breakdowns.
+
+### Professional Visibility
+Via verified technician listings.
+
+### Decision Confidence
+Through AI-assisted contextual guidance.
+
+---
+
+## Challenges Encountered
+
+- Designing estimation logic without oversimplifying construction realities  
+- Preventing overengineering while maintaining modular clarity  
+- Handling price volatility without compromising data stability  
+- Maintaining realistic assumptions in AI outputs  
+- Aligning UX simplicity with complex backend calculations  
+
+---
+
+## Planned Improvements
+
+- Vendor verification workflows with audit logs  
+- Exportable financial reports (PDF/CSV)  
+- Dynamic pricing feeds  
+- Financial tracking (budget vs actual spending)  
+- Material usage tracking (used, remaining, required)  
+- Construction progress monitoring (phase-based completion tracking)  
+
+Long term vision: evolve from estimation platform to **construction lifecycle intelligence system**.
+
+---
+
+## Positioning
+
+ConstructHub differs from existing tools by combining:
+
+ConstructHub Features
+
+- Localized Pricing -> Yes 
+
+- Material Marketplace -> Yes 
+
+- Technician Directory -> Yes 
+
+- AI Advisory -> Yes 
+
+- Integrated Workflow -> Yes 
 
 
+The differentiation is not a single feature, it is the integration.
+
+---
+
+## Conclusion
+
+ConstructHub addresses a structural inefficiency in Kenyan construction: fragmented information across budgeting, sourcing, and professional discovery.
+
+By consolidating these workflows into a single intelligent system, it reduces uncertainty, improves planning accuracy, and introduces transparency into small-scale construction processes.
+
+It is not merely a calculator or directory.
+
+It is a localized construction intelligence platform.

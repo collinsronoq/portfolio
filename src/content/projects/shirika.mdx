@@ -1,31 +1,179 @@
 ---
-title: Shirika Court Management System
-tagline: Contributions and expenditure tracking system
-summary: Tracks contributions, balances, and expenditure records with clean reporting workflows.
-role: End-to-end development
+title: Court Management System
+tagline: Transparent contribution and expenditure management for residential communities
+summary: A web-based system that digitizes service fee collection, tracks household balances, and enforces transparent expenditure reporting with structured audit workflows.
+role: End-to-end system design and development
 period: 2024–2026
 ---
 
 ## Overview
-Shirika helps communities track monthly contributions, balances, and spending transparently.
+
+The Court Management System is a web-based financial and administrative platform designed for residential courts, estates, and gated communities.
+
+The system digitizes the management of monthly service fees, household balances, and expenditure records while providing structured governance workflows for administrators and committee members.
+
+It replaces informal spreadsheets, paper ledgers, and fragmented communication channels with a centralized and auditable platform.
+
+---
 
 ## Problem
-Many community/estate systems struggle with:
-- Manual records and inconsistencies
-- Disputes due to weak audit trails
-- Lack of clear balances per household/member
+
+Many residential courts operate using manual or semi-digital systems (Excel sheets, WhatsApp updates, handwritten receipts). These approaches introduce structural weaknesses:
+
+### 1. Limited Transparency in Spending
+- Members often lack visibility into how service fees are spent.
+- Delays in publishing expenditure reports lead to mistrust.
+- No standardized approval workflow for major expenses.
+- Difficulty verifying receipts or expenditure breakdowns.
+
+### 2. Disputes Over Contributions and Balances
+- Manual record-keeping leads to reconciliation errors.
+- Households are unsure of their current balance status.
+- Historical contribution records are difficult to retrieve.
+- Committee transitions cause data loss or inconsistencies.
+
+### 3. Inefficient Payment Workflows
+- Payments are made through bank transfers or mobile money without proper tracking.
+- Manual confirmation of payments consumes administrative time.
+- No real-time balance updates for households.
+- Risk of unrecorded or misallocated payments.
+
+### 4. Weak Audit Trails
+- No structured logs for edits or deletions.
+- Lack of accountability when financial records change.
+- No exportable financial summaries for AGMs or reporting.
+
+### 5. Administrative Bottlenecks
+- Treasurers handle most processes manually.
+- Generating monthly summaries is time-consuming.
+- Reporting requires aggregation from multiple sources.
+
+---
 
 ## Solution
-- Contribution tracking per household/unit
-- Expenditure recording + receipts/reporting
-- Role-based access (admin vs user)
-- Dashboard summaries for quick decisions
+
+The Court Management System addresses these challenges through structured financial workflows and role-based controls.
+
+### Contribution Management
+- Monthly service fee configuration per household.
+- Automated balance calculation (arrears and overpayments).
+- Historical contribution ledger per unit.
+- Real-time balance visibility for each house.
+
+### Transparent Expenditure Tracking
+- Categorized expenditure recording (security, garbage collection, maintenance, utilities, etc.).
+- Attachment of digital receipts or references.
+- Structured approval flow for large expenditures.
+- Auto-generated expenditure summaries for reporting periods.
+
+### Integrated Payment Workflow
+- Payment initiation directly from the application.
+- Automated payment confirmation and reconciliation.
+- Immediate balance updates upon successful transactions.
+- Reduced administrative overhead for treasurers.
+
+### Reporting & Dashboards
+- Financial overview dashboard (total collected, total spent, net balance).
+- Household-level account statements.
+- Monthly and annual financial summaries.
+- Exportable reports for AGMs and committee reviews.
+
+### Governance & Role-Based Access
+- Role separation (Admin, Treasurer, Member).
+- Restricted financial modification rights.
+- Controlled access to sensitive financial data.
+- Structured audit trail for accountability.
+
+---
+
+## Core Features
+
+- Household/unit registry management
+- Contribution ledger with automated balance computation
+- Expenditure module with categorized tracking
+- Digital receipt references and documentation
+- Dashboard analytics for committee decision-making
+- Role-based authentication and authorization
+- Audit-friendly data structure
+- Searchable transaction history
+
+---
 
 ## Architecture Notes
-- FastAPI routes organized by domain modules
-- SQLAlchemy models structured for reporting and balances
-- Authentication and authorization layered cleanly
+
+### Backend
+- **FastAPI** for API and server-rendered workflows.
+- Domain-driven route separation (contributions, expenditures, households, authentication).
+- Modular service layer for financial calculations.
+
+### Database Design
+- **SQLAlchemy ORM** for structured relational modeling.
+- Normalized financial tables (Household, Contribution, Expenditure, Payment).
+- Deterministic balance computation (ledger-based, not manually stored).
+- Indexed transaction tables for reporting efficiency.
+
+### Authentication & Authorization
+- Secure login system.
+- Role-based permission enforcement at route and service layer.
+- Controlled write-access to financial operations.
+
+### Reporting Logic
+- Aggregation queries for monthly totals.
+- Derived balance fields computed from transaction history.
+- Clean separation between transactional data and reporting views.
+
+---
+
+## Impact
+
+- Increased financial transparency within the court.
+- Reduced disputes over balances and arrears.
+- Streamlined monthly reporting process.
+- Faster reconciliation of mobile money and bank transactions.
+- Improved trust between committee members and residents.
+- Data continuity across leadership transitions.
+
+---
+
+## Key Design Decisions
+
+- Ledger-based financial modeling instead of manually editable balances.
+- Strict separation of contribution and expenditure domains.
+- Emphasis on auditability over convenience.
+- Minimalistic but functional administrative dashboard.
+
+---
 
 ## Learnings
-- Data modeling for balances and monthly contributions
-- Designing admin workflows for real usage
+
+### Financial Data Modeling
+Designing ledger-style systems requires:
+- Avoiding duplicated balance fields.
+- Ensuring transactional integrity.
+- Structuring queries for performance and clarity.
+
+### Governance-Oriented Software Design
+Community systems are socio-technical:
+- Transparency features are as important as technical correctness.
+- Role separation prevents misuse.
+- Clear reporting structures build user trust.
+
+### Workflow Design
+Real-world treasurer workflows informed:
+- Contribution reconciliation logic.
+- Expenditure categorization structure.
+- Dashboard metrics prioritization.
+
+---
+
+## Future Enhancements
+
+- Automated reminders for overdue service fees.
+- Multi-year financial comparison analytics.
+- Budget planning vs actual expenditure tracking.
+- Mobile-first progressive web app experience.
+- Multi-court support with tenant isolation.
+
+---
+
+This system demonstrates applied backend engineering principles in financial modeling, workflow structuring, and governance-focused software architecture within a real-world residential management context.

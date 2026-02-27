@@ -32,7 +32,7 @@ export function Capabilities() {
           <h2 className="text-2xl font-semibold font-mono tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl">
             What I do
           </h2>
-          <p className="mt-3 text-base font-mono leading-relaxed text-gray-600 dark:text-gray-400">
+          <p className="mt-3 text-sm font-mono leading-relaxed text-gray-600 dark:text-gray-400">
             I build systems that are practical, maintainable, and aligned to
             real workflows focusing on clarity, reliability, and clean delivery.
           </p>

@@ -11,10 +11,17 @@ export function About() {
             <h2 className="text-2xl font-semibold font-mono tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl">
               About
             </h2>
-            <p className="mt-3 text-base text-justify leading-relaxed font-mono text-gray-600 dark:text-gray-400">
+            {/* <p className="mt-3 text-sm text-justify leading-relaxed font-mono text-gray-600 dark:text-gray-400">
               I am a Full-Stack Developer focused on building practical systems
               for real workflows, clean UI, reliable backend services, and
               maintainable code.
+            </p> */}
+            <p className="mt-3 text-sm text-justify leading-relaxed font-mono text-gray-600 dark:text-gray-400">
+              I am a Full-Stack Developer with a strong inclination toward backend-driven
+              systems and structured workflows. My exposure to enterprise-style
+              environments and transaction-based applications has shaped how I approach
+              software systems should reflect real operational processes, not just user
+              interface interactions.
             </p>
 
             <div className="mt-6 flex flex-wrap justify-around">
@@ -34,36 +41,52 @@ export function About() {
             </div>
           </div>
 
-          <div className="md:col-span-7">
+          <div className="md:col-span-7 pt-4 md:pt-0">
             <Card>
-              <h3 className="text-lg font-semibold font-mono tracking-tight text-gray-900 dark:text-gray-100">
+              <h3 className="text-xl font-semibold font-mono tracking-tight text-gray-900 dark:text-gray-100">
                 How I work
               </h3>
-
               <ul className="mt-4 space-y-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-                <li className="text-justify">
-                  <span className="font-medium font-mono text-gray-900 dark:text-gray-100">
-                    Product thinking:
+                <li className="text-justify font-mono">
+                  <span className="font-black text-base text-gray-900 dark:text-gray-100">
+                    Systems thinking:
                   </span>{" "}
-                  define the workflow first, then implement features that reduce friction.
+                  <span className="text-sm">
+                    approach features as part of a larger workflow, ensuring data consistency,
+                    clear state transitions, and predictable behavior across the application.
+                  </span>
+                  
                 </li>
-                <li className="text-justify">
-                  <span className="font-medium font-mono text-gray-900 dark:text-gray-100">
-                    Strong foundations:
+
+                <li className="text-justify font-mono">
+                  <span className="font-black text-base text-gray-900 dark:text-gray-100">
+                    Architectural discipline:
                   </span>{" "}
-                  data models, validation, and modular architecture that scales with the project.
+                  <span className="text-sm">
+                    emphasize separation of concerns, structured service layers, and
+                    maintainable abstractions that scale as requirements evolve.
+                  </span>
                 </li>
-                <li className="text-justify">
-                  <span className="font-medium font-mono text-gray-900 dark:text-gray-100">
-                    Delivery quality:
+
+                <li className="text-justify font-mono">
+                  <span className="font-black text-base text-gray-900 dark:text-gray-100">
+                    Reliability first:
                   </span>{" "}
-                  readable code, predictable behavior, and clean UI details that reflect professionalism.
+                  <span className="text-sm">
+                    prioritize validation, error handling, and data integrity over rapid but
+                    fragile implementations.
+                  </span>
                 </li>
-                <li className="text-justify">
-                  <span className="font-medium font-mono text-gray-900 dark:text-gray-100">
-                    Iteration:
+
+                <li className="text-justify font-mono">
+                  <span className="font-black text-base text-gray-900 dark:text-gray-100">
+                    Continuous refinement:
                   </span>{" "}
-                  ship an MVP quickly, then improve based on feedback and real usage.
+                  <span className="text-sm">
+                    ship focused solutions, observe real usage, and iteratively improve both
+                    performance and developer experience.
+                  </span>
+                  
                 </li>
               </ul>
             </Card>

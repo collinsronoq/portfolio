@@ -1,4 +1,5 @@
 import { Container } from "./Container";
+import { Mail } from "lucide-react";
 
 
 const EMAIL =
@@ -15,9 +16,12 @@ export function Footer() {
 
           <a
             href="./sections/Contact"
-            className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
+            className="flex items-center gap-2"
           >
-            {EMAIL}
+            <Mail size={16}/>
+            <span className="text-sm font-medium text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300">
+              {EMAIL}
+            </span>
           </a>
         </div>
       </Container>

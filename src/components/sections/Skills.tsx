@@ -23,7 +23,7 @@ const skillGroups: Array<{
   },
   {
     title: "Dev & Tooling",
-    items: ["Git/GitHub", "Logging & debugging", "Deployment basics", "Docker"],
+    items: ["Git/GitHub", "Logging & debugging", "Deployment basics", "PostMan"],
   },
   {
     title: "AI / ML",

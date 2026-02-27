@@ -16,7 +16,7 @@ export function Hero() {
             <div className="flex flex-col items-center rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
               <div className="relative h-36 w-36 touch-auto overflow-hidden rounded-full border border-gray-200 dark:border-gray-700">
                 <Image
-                  src="/images/IMG_20230302_173912.jpg"
+                  src="/images/profile-pic.jpeg"
                   alt="Collins Rono"
                   fill
                   className="object-cover"
@@ -24,15 +24,15 @@ export function Hero() {
                 />
               </div>
 
-              <p className="mt-4 text-sm font-mono font-medium  text-gray-900 dark:text-gray-100">
+              <p className="mt-4 text-sm md:text-base font-mono font-black  text-gray-900 dark:text-gray-100">
                 Collins Rono
               </p>
 
-              <p className="text-sm text-gray-600 mt-2 font-mono dark:text-gray-400">
+              <p className="text-sm md:text-base text-gray-600 mt-2 font-mono font-black dark:text-gray-400">
                 Full-Stack Developer
               </p>
 
-              <div className="mt-4 w-full border-t border-gray-200 pt-4 text-sm font-mono font-black dark:border-gray-800">
+              <div className="mt-4 w-full border-t border-gray-200 pt-4 text-sm  font-mono font-black dark:border-gray-800">
                 <ul className="space-y-2 text-gray-600 dark:text-gray-400">
                   <li>Next.js • React • TypeScript</li>
                   <li>FastAPI • Flask • SQLAlchemy</li>
